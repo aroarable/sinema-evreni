@@ -1,336 +1,74 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinema Evreni</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
+  <meta charset="UTF-8" />
+  <title>Movyra </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Movyra çok yakında. Sinematik ve seçkin bir izleme deneyimi.">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="intro-active">
+<body>
 
-    <!-- INTRO OVERLAY -->
-    <div class="intro-overlay" id="introOverlay">
-        <button class="intro-close" id="introClose" aria-label="Intro kapat">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <canvas class="intro-canvas" id="introCanvas"></canvas>
-        <div class="intro-card">
-            <canvas class="intro-snow" id="introSnow"></canvas>
-            <p class="intro-chip">SINEMA EVRENI</p>
-            <h1>Emre Can Kayabaş</h1>
-            <h2>Web Site Geliştiricisi</h2>
-            <p class="intro-text">
-                Bu sitenin tasarımı ve kodlaması <strong> <span class="emrecankayabas">Emre Can Kayabaş</span> </strong> tarafından modern sinema ruhu ile düzenlenmiştir.
-            </p>
-        </div>
-        <p class="intro-footer">© 2025 Sinema Evreni. Tüm hakları saklıdır.</p>
+  <div class="overlay"></div>
+  <div class="particles"></div>
+
+  <main class="container fade-in">
+    <h1 class="logo" id="logo" style="font-weight: 900;">Movyra</h1>
+    <div class="logo-tooltip" id="logoTooltip">
+      <div class="tooltip-content">
+        <h3>Movyra Hakkında</h3>
+        <p>Movyra, sinema ve dizi tutkunları için özenle tasarlanmış modern bir film platformudur. En sevdiğiniz içeriklere hızlı ve kolay erişim sağlayan, kullanıcı deneyimini ön planda tutan bir platform.</p>
+        <p class="tooltip-date">Platform <strong style="color: yellow;">2 Şubat 2026</strong> tarihinde yayına açılacak.</p>
+        <p class="tooltip-credit"><span style="color: darkgoldenrod;">Emre Can Kayabaş</span> tarafından özenle ve dikkatlice hazırlanıyor. Sabrınız için teşekkürler.</p>
+      </div>
     </div>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="left">
-            <img src="sinemaevreni.png" class="logo">
+    <h2 class="headline">
+      Hayal ettiğinden çok<br>
+      daha fazlası.
+    </h2>
 
-            <nav class="menu">
-                <a href="#" data-home-link><i class="fa-solid fa-house"></i> Ana Sayfa</a>
-                <a href="#" data-search-link><i class="fa-solid fa-magnifying-glass"></i> Arama</a>
-                <a href="#"><i class="fa-solid fa-plus"></i> İzleme Listem</a>
-                <a href="#"><i class="fa-solid fa-film"></i> Filmler</a>
-                <a href="#"><i class="fa-solid fa-desktop"></i> Diziler</a>
-            </nav>
+    <p class="description">
+      Movyra, sıradan bir film sitesi değil.<br>
+      İzleme deneyimini baştan sona yeniden kurgulayan
+      modern ve seçkin bir platform.
+      <br><br>
+      Her detay; daha hızlı, daha akıcı ve
+      daha sinematik bir deneyim için tasarlandı.
+      <br><br>
+      Şu anda son hazırlıklarımızı yapıyoruz.<br>
+      Çünkü ilk izlenim, her şeydir.
+    </p>
+
+    <div class="countdown-wrapper">
+      <p class="countdown-title">Açılışa kalan süre</p>
+
+      <div class="countdown">
+        <div>
+          <span id="days">00</span>
+          <small>Gün</small>
         </div>
-
-        <div class="right">
-            <span class="username">Emre</span>
-            <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/profile-avatar/woody.png" class="avatar">
+        <div>
+          <span id="hours">00</span>
+          <small>Saat</small>
         </div>
-    </header>
-
-
-
-    <!-- HERO SECTION -->
-    <section class="hero home-section" id="heroSection">
-        <div class="hero-overlay"></div>
-
-        <div class="hero-content">
-
-            <img id="heroLogo"
-                 src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A714B8636C7DC3C08550955BE2B47C7565AA22A33E479D7991F6B0ECF2E42207/scale?width=1440&aspectRatio=1.78&format=png" 
-                 class="hero-logo" alt="Film logosu">
-
-            <h3 class="hero-subtitle" id="heroTagline">IMAX Enhanced Formatıyla Yayında</h3>
-
-            <div class="info-boxes">
-                <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/icons/imax.png" class="info-icon">
-                <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/icons/audible.png" class="info-icon">
-                <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/icons/subtitle.png" class="info-icon">
-
-                <span class="info-text" id="heroMetaPrimary">2010 • 1s 40dk</span>
-                <span class="info-text" id="heroMetaSecondary">Animasyon, Aile, Komedi</span>
-            </div>
-
-            <p class="hero-desc" id="heroDesc">
-                Yenilmezler ile yaşadığı maceranın büyüsüne kapılan genç Peter Parker kendini kanıtlama isteğiyle dolup taşan bir gençtir. Ancak yaşı gereği birçok farklı sorumluluğu vardır. May Halası ile yaşayan genç Peter bir yandan da ona göz kulak olan Tony Stark ile arkadaşlığını ilerletmiştir. Okul hayatına alışmaya ve sıradan bir genç gibi yaşamaya çalışan Peter'ın aklında ise suçla savaşmak ve dünyayı daha güvenli bir hale getirmek vardır. Akbaba yepyeni bir düşmanı olarak ortaya çıktığında ise Peter'ın kendini gösterme fırsatı çıkacak, ancak en değerli gördüğü herkes tehdit altında olacaktır.
-            </p>
-
-            <div class="hero-buttons">
-                <button class="play-btn" id="playBtn"><i class="fa-solid fa-play"></i> Oynat</button>
-                <button class="detail-btn" id="detailBtn"><i class="fa-solid fa-circle-info"></i> Detaylı Bilgi</button>
-                <button class="trailer-btn" id="trailerBtn">Fragman</button>
-                <button class="list-btn" id="shareBtn" title="Listeme Ekle"><i class="fa-solid fa-user-plus"></i></button>
-            </div>
-
+        <div>
+          <span id="minutes">00</span>
+          <small>Dakika</small>
         </div>
-    </section>
-
-
-
-
-    <!-- SLIDER BÖLÜMÜ -->
-    <section class="slider-section home-section">
-        <h2 class="slider-title">Önerilen Filmler</h2>
-
-        <div class="slider-container">
-            <div class="slider-track" id="recommendedTrack">
-
-                <button class="slider-item js-film-trigger" data-film="spider-man-homecoming">
-                    <img src="https://image.tmdb.org/t/p/w500/5x00yQZ3Mcz7duwMKc9GE8w0P88.jpg" alt="Örümcek-Adam: Eve Dönüş">
-                    <span>Örümcek-Adam: Eve Dönüş</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="toy-story-4">
-                    <img src="https://image.tmdb.org/t/p/w500/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg" alt="Toy Story 4">
-                    <span>Toy Story 4</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="cars-2">
-                    <img src="https://image.tmdb.org/t/p/w500/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg" alt="Cars 2">
-                    <span>Cars 2</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="frozen">
-                    <img src="https://image.tmdb.org/t/p/w500/mINJaa34MtknCYl5AjtNJzWj8cD.jpg" alt="Frozen">
-                    <span>Frozen</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="finding-nemo">
-                    <img src="https://image.tmdb.org/t/p/w500/9irykA6dY5Dy1yJNivOsYrs9tdE.jpg" alt="Kayıp Balık Nemo">
-                    <span>Kayıp Balık Nemo</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="ice-age">
-                    <img src="https://image.tmdb.org/t/p/w500/gLhHHZUzeseRXShoDyC4VqLgsNv.jpg" alt="Ice Age">
-                    <span>Ice Age</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="frozen-2">
-                    <img src="https://image.tmdb.org/t/p/w500/pjeMs3yqRmFL3giJy4PMXWZTTPa.jpg" alt="Frozen II">
-                    <span>Frozen II</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="maleficent">
-                    <img src="https://image.tmdb.org/t/p/w500/ik8PugpL41s137RAWEGTAWu0dPo.jpg" alt="Maleficent">
-                    <span>Maleficent</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="up">
-                    <img src="https://image.tmdb.org/t/p/w500/nUCso8lEEUVG9PgI0nTcB4ULF6k.jpg" alt="Up">
-                    <span>Up</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="wall-e">
-                    <img src="https://image.tmdb.org/t/p/w500/hbhFnRzzg6ZDmm6R7A6stU3aO0K.jpg" alt="WALL·E">
-                    <span>WALL·E</span>
-                </button>
-                <button class="slider-item js-film-trigger" data-film="lion-king">
-                    <img src="https://image.tmdb.org/t/p/w500/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg" alt="Aslan Kral">
-                    <span>Aslan Kral</span>
-                </button>
-
-            </div>
+        <div>
+          <span id="seconds">00</span>
+          <small>Saniye</small>
         </div>
-    </section>
-
-    <!-- NEW RELEASES -->
-    <section class="new-section home-section detail-hidden">
-        <h2>Sinema Evreni'nde Yeni</h2>
-
-        <div class="poster-grid">
-            <img src="https://image.tmdb.org/t/p/w780/1ZLfwCHm3AefZmBmQsIm2ElU5LP.jpg" alt="Yeni Film 1">
-            <img src="https://image.tmdb.org/t/p/w780/9Y9R0BOJEaORFn4p3EIz6SPAeeP.jpg" alt="Yeni Film 2">
-            <img src="https://image.tmdb.org/t/p/w780/yyzETVERFGsf0ykL0vxwzpdIERK.jpg" alt="Yeni Film 3">
-            <img src="https://image.tmdb.org/t/p/w780/bXudrfWpEua78F3wm1pp6d3jE1W.jpg" alt="Yeni Film 4">
-            <img src="https://image.tmdb.org/t/p/w780/4yVU4LG0LuulTYBHReWTdk2UpZF.jpg" alt="Yeni Film 5">
-            <img src="https://image.tmdb.org/t/p/w780/89KWV9rJpTckBnd9XciWSXdAEZb.jpg" alt="Yeni Film 6">
-            <img src="https://image.tmdb.org/t/p/w780/3SItK9MQh1wWSxX1VRyzfFOlgaE.jpg" alt="Yeni Film 7">
-        </div>
-    </section>
-
-    <!-- CATEGORY CARDS -->
-    <section class="categories-section home-section detail-hidden">
-        <div class="category-card">
-            <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/studios/marvel.png" alt="Marvel">
-        </div>
-        <div class="category-card">
-            <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/studios/star-wars.png" alt="Star Wars">
-        </div>
-        <div class="category-card">
-            <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/studios/pixar.png" alt="Pixar">
-        </div>
-        <div class="category-card">
-            <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/studios/disney.png" alt="Disney">
-        </div>
-        <div class="category-card">
-            <img src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/studios/national_geographic.png" alt="National Geographic">
-        </div>
-    </section>
-
-    <!-- MORE FUN SECTION -->
-    <section class="more-fun-section home-section detail-hidden">
-        <div class="more-fun-bg">
-            <img class="more-fun-title" src="https://emirhankayabas.com.tr/demo/public/thema-v1/images/backdrop/homepage/more_fun.png" alt="Daha Fazla Eğlence">
-
-            <div class="more-fun-slider">
-                <div class="more-fun-track">
-                    <img src="https://image.tmdb.org/t/p/w780/tltloMUJ3KZ7IByFwJrR4lvHZeK.jpg" alt="Film 1">
-                    <img src="https://image.tmdb.org/t/p/w500/nlr2oxuYsHXt0wdtmzaOuVBoNC0.jpg" alt="Film 2">
-                    <img src="https://image.tmdb.org/t/p/w500/tQCKPTbfawjCRPSzBVlm6VUsaiw.jpg" alt="Film 3">
-                    <img src="https://image.tmdb.org/t/p/w780/qE3dAUInYF2OXvuGbcIkKUaTdlE.jpg" alt="Film 4">
-                    <img src="https://image.tmdb.org/t/p/w500/pV2OwKjfBnsCGNXVOz6nAqHm4pw.jpg" alt="Film 5">
-                    <img src="https://image.tmdb.org/t/p/w500/xbiycuc84TrieEWwkkuH2hoEa9S.jpg" alt="Film 6">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEARCH PAGE -->
-    <section class="search-section">
-        <div class="search-hero">
-            <div class="search-hero__content">
-                <p class="search-eyebrow">Sinema Evreni Arama</p>
-                <h2>İsim, karakter veya türe göre arayın</h2>
-                <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Ör: Avengers, Elsa, Animasyon" disabled>
-                    <button disabled>Yakında</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="search-discover">
-            <div class="search-discover__head">
-                <h3>Keşfet</h3>
-                <span>Popüler içerikler</span>
-            </div>
-
-            <div class="search-grid">
-                <button class="search-card js-film-trigger" data-film="spider-man-homecoming">
-                    <img src="https://image.tmdb.org/t/p/w500/5x00yQZ3Mcz7duwMKc9GE8w0P88.jpg" alt="Örümcek-Adam: Eve Dönüş">
-                    <span>Örümcek-Adam: Eve Dönüş</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="toy-story-4">
-                    <img src="https://image.tmdb.org/t/p/w500/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg" alt="Toy Story 4">
-                    <span>Toy Story 4</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="cars-2">
-                    <img src="https://image.tmdb.org/t/p/w500/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg" alt="Cars 2">
-                    <span>Cars 2</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="frozen">
-                    <img src="https://image.tmdb.org/t/p/w500/mINJaa34MtknCYl5AjtNJzWj8cD.jpg" alt="Frozen">
-                    <span>Frozen</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="finding-nemo">
-                    <img src="https://image.tmdb.org/t/p/w500/9irykA6dY5Dy1yJNivOsYrs9tdE.jpg" alt="Kayıp Balık Nemo">
-                    <span>Kayıp Balık Nemo</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="ice-age">
-                    <img src="https://image.tmdb.org/t/p/w500/gLhHHZUzeseRXShoDyC4VqLgsNv.jpg" alt="Ice Age">
-                    <span>Ice Age</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="frozen-2">
-                    <img src="https://image.tmdb.org/t/p/w500/pjeMs3yqRmFL3giJy4PMXWZTTPa.jpg" alt="Frozen II">
-                    <span>Frozen II</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="maleficent">
-                    <img src="https://image.tmdb.org/t/p/w500/ik8PugpL41s137RAWEGTAWu0dPo.jpg" alt="Maleficent">
-                    <span>Maleficent</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="up">
-                    <img src="https://image.tmdb.org/t/p/w500/nUCso8lEEUVG9PgI0nTcB4ULF6k.jpg" alt="Up">
-                    <span>Up</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="wall-e">
-                    <img src="https://image.tmdb.org/t/p/w500/hbhFnRzzg6ZDmm6R7A6stU3aO0K.jpg" alt="WALL·E">
-                    <span>WALL·E</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="lion-king">
-                    <img src="https://image.tmdb.org/t/p/w500/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg" alt="Aslan Kral">
-                    <span>Aslan Kral</span>
-                </button>
-                <button class="search-card js-film-trigger" data-film="spider-man-homecoming">
-                    <img src="https://image.tmdb.org/t/p/w500/9FhAMYHVqTCz9PFwfC6nS1gV4PR.jpg" alt="Örümcek-Adam Seçkileri">
-                    <span>Örümcek-Adam Seçkileri</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- DETAIL MODAL -->
-    <div class="detail-modal" id="detailModal" aria-hidden="true">
-        <div class="detail-modal__content">
-            <button class="detail-modal__close" id="detailModalClose" aria-label="Kapat">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="detail-modal__head">
-                <img id="modalLogo" alt="Film logosu">
-                <div>
-                    <h3 id="modalTitle">Film Başlığı</h3>
-                    <p id="modalMeta">IMDb • Tür</p>
-                </div>
-            </div>
-            <p id="modalDescription" class="detail-modal__description">
-                Film açıklaması burada yer alacak.
-            </p>
-            <div class="detail-modal__stats">
-                <span id="modalImdb">IMDb 0.0</span>
-                <span id="modalRuntime">Süre</span>
-                <span id="modalYear">Yıl</span>
-            </div>
-            <div class="detail-modal__columns">
-                <div>
-                    <h4>Yapımcılar</h4>
-                    <ul id="modalStudios"></ul>
-                </div>
-                <div>
-                    <h4>Oyuncular</h4>
-                    <ul id="modalCast"></ul>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <p class="footer-follow">Sinema Evreni'ni takip edin:</p>
-        <div class="footer-socials">
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        </div>
+    <p class="launch-date">
+      Movyra, <strong>2 Şubat 2026</strong> tarihinde yayında.<br>
 
-        <div class="footer-logo">SINEMA EVRENI</div>
+    </p>
+  </main>
 
-        <div class="footer-links">
-            <a href="#">Yardım Merkezi</a>
-            <a href="#">Kullanım Şartları</a>
-            <a href="#">Gizlilik Politikası</a>
-            <a href="#">Çerez Politikası</a>
-            <a href="#">Hakkımızda</a>
-        </div>
-
-        <p class="footer-copy">© 2025 Sinema Evreni. Tüm hakları saklıdır.</p>
-    </footer>
-
-    <!-- JS -->
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
